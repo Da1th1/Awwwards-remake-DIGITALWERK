@@ -27,7 +27,7 @@ const Four = () => {
        </video>
       </div>
       <div className="texxt-area">
-      <a href="#" class="Button-pos">See open positions</a>
+      <button type="button" className="Button-pos">See open positions</button>
       <p className="about-text">
       Open, courageous and rousing. Without all-in or outdated views. Instead with <br />
       freedom and room to grow. With responsibility and inner drive. With diverse <br />

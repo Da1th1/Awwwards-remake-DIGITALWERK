@@ -4,7 +4,6 @@ import D from "../img/cup.jpg";
 import E from "../img/drink.jpg";
 import F from "../img/man.jpg";
 import React from "react";
-import { LottiePlayer } from "@lottiefiles/lottie-player";
 
 const Third = () => {
   return <div className="t">

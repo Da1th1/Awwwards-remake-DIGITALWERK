@@ -1,6 +1,5 @@
 import "./second.css";
 import React from "react";
-import { LottiePlayer } from "@lottiefiles/lottie-player";
 
 const Second = () => {
   return <div className="s">

@@ -10,21 +10,21 @@ const Home = () => {
         <div className="h-main">
         <div className="logo">digitalwerk</div>
         <nav className="nav-links">
-          <a href="#" class="Button">Cases</a>
-          <a href="#" class="Button">Blog</a>
-          <a href="#" class="Button">People</a>
-          <a href="#" class="Button">Jobs</a>
-          <a href="#" class="Button">Contact</a>
+          <button type="button" className="Button">Cases</button>
+          <button type="button" className="Button">Blog</button>
+          <button type="button" className="Button">People</button>
+          <button type="button" className="Button">Jobs</button>
+          <button type="button" className="Button">Contact</button>
         </nav>
         <nav className="langu">
-          <a href="#" class="Button">DE</a>
-          <a href="#" class="Button">EN</a>
+          <button type="button" className="Button">DE</button>
+          <button type="button" className="Button">EN</button>
         </nav>
         <div className="heading">We don't do <br />
         advertising.
         </div>
         <div className="view">
-        <a href="#" class="Button-view">View Manifesto</a>
+        <button type="button" className="Button-view">View Manifesto</button>
         </div>
         <div className="date">{date}</div>
         <div className="company">
