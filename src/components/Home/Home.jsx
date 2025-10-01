@@ -1,6 +1,7 @@
 import "./home.css";
 import A from "../img/bg.mp4";
 import B from "../img/logo.png";
+import PureDigitalWhite from "../../puredigital-white.png";
 import React from "react";
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   return <div className="h">
         <div className="h-main">
         <div className="logo">
-          <img src="@puredigital-white.png" alt="Pure Digital Logo" className="logo-img" />
+          <img src={PureDigitalWhite} alt="Pure Digital Logo" className="logo-img" />
         </div>
         <nav className="nav-links">
           <button type="button" className="Button">Cases</button>
