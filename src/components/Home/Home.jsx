@@ -20,8 +20,8 @@ const Home = () => {
           <button type="button" className="Button" style={{color: '#682aff'}}>Contact</button>
         </nav>
         <nav className="langu">
-          <button type="button" className="Button">DE</button>
-          <button type="button" className="Button">EN</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>DE</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>EN</button>
         </nav>
         <div className="heading">We don't do <br />
         advertising.
