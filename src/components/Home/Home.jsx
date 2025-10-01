@@ -8,7 +8,9 @@ const Home = () => {
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   return <div className="h">
         <div className="h-main">
-        <div className="logo">digitalwerk</div>
+        <div className="logo">
+          <img src="@puredigital-white.png" alt="Pure Digital Logo" className="logo-img" />
+        </div>
         <nav className="nav-links">
           <button type="button" className="Button">Cases</button>
           <button type="button" className="Button">Blog</button>
