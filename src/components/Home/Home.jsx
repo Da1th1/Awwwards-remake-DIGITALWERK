@@ -13,11 +13,11 @@ const Home = () => {
           <img src={PureDigitalWhite} alt="Pure Digital Logo" className="logo-img" />
         </div>
         <nav className="nav-links">
-          <button type="button" className="Button">Cases</button>
-          <button type="button" className="Button">Blog</button>
-          <button type="button" className="Button">People</button>
-          <button type="button" className="Button">Jobs</button>
-          <button type="button" className="Button">Contact</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>Cases</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>Blog</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>People</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>Jobs</button>
+          <button type="button" className="Button" style={{color: '#682aff'}}>Contact</button>
         </nav>
         <nav className="langu">
           <button type="button" className="Button">DE</button>
