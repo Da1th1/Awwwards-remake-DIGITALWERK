@@ -23,8 +23,8 @@ const Home = () => {
           <button type="button" className="Button" style={{color: '#682aff'}}>DE</button>
           <button type="button" className="Button" style={{color: '#682aff'}}>EN</button>
         </nav>
-        <div className="heading">We don't do <br />
-        advertising.
+        <div className="heading">Just Pure... <br />
+        Digital Innovation.
         </div>
         <div className="view">
         <button type="button" className="Button-view" style={{color: '#682aff'}}>View Manifesto</button>
