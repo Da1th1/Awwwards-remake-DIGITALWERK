@@ -1,0 +1,10 @@
+node_modules
+.tmp
+.cache
+build
+public/uploads
+.git
+.gitignore
+Dockerfile
+.env
+.env.*

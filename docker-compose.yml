@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: digitalwerk_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  strapi:
+    platform: linux/amd64
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: digitalwerk_strapi
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: change_me_1,change_me_2
+      API_TOKEN_SALT: change_me
+      ADMIN_JWT_SECRET: change_me
+      TRANSFER_TOKEN_SALT: change_me
+      JWT_SECRET: change_me
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      DATABASE_SSL: "false"
+    volumes:
+      - ./backend/public:/app/public
+    ports:
+      - "1337:1337"
+
+volumes:
+  db_data:

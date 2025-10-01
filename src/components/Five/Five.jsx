@@ -1,8 +1,53 @@
 import "./five.css";
+import React, { useState, useEffect } from "react";
+import { getBlogs, getStrapiImageUrl } from "../../services/api";
 
-import React from "react";
+// Fallback data in case API is not available
+const fallbackBlogs = [
+  { title: "Rainer Schönfelder", excerpt: "A website relaunch that goes deeper" },
+  { title: "Thought leadership", excerpt: "Thought leadership through sustainable way" }
+];
 
 const Five = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        const data = await getBlogs(6); // Fetch 6 latest blogs
+        
+        if (data && data.length > 0) {
+          // Transform Strapi data to component format
+          const transformedBlogs = data.map(blogItem => ({
+            title: blogItem.attributes.title,
+            excerpt: blogItem.attributes.excerpt,
+            image: getStrapiImageUrl(blogItem.attributes.featuredImage),
+            slug: blogItem.attributes.slug,
+            publishDate: blogItem.attributes.publishDate,
+            author: blogItem.attributes.author
+          }));
+          setBlogs(transformedBlogs);
+        } else {
+          // Use fallback if no data from API
+          setBlogs(fallbackBlogs);
+        }
+      } catch (err) {
+        console.error("Error loading blogs:", err);
+        // Use fallback data on error
+        setBlogs(fallbackBlogs);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const cardClasses = ["cards", "cards-2", "cards-3", "cards-4", "cards-5", "cards-6"];
+  const cardHeadClasses = ["card-head", "card-head-2", "card-head", "card-head-2", "card-head", "card-head-2"];
+
   return <div className="fi">
       <div className="blog-back">
           <div className="blog-head">Blog</div>
@@ -12,16 +57,15 @@ const Five = () => {
           beyond. And of course a look behind the scenes - about the development of our projects and <br />
           work come from.
           </p>
-          <div className="cards">
-              <div className="card-head">Rainer SchönfelderA website relaunch that goes deeper</div>
-          </div>
-          <div className="cards-2">
-              <div className="card-head-2">Thought leadership through sustainable way</div>
-          </div>
-          <div className="cards-3"></div>
-          <div className="cards-4"></div>
-          <div className="cards-5"></div>
-          <div className="cards-6"></div>
+          {loading && <div className="loading-message">Loading blog posts...</div>}
+          {blogs.slice(0, 6).map((blog, index) => (
+            <div key={index} className={cardClasses[index]} style={blog.image ? {backgroundImage: `url(${blog.image})`} : {}}>
+              <div className={cardHeadClasses[index]}>
+                {blog.title}
+                {blog.excerpt && ` - ${blog.excerpt}`}
+              </div>
+            </div>
+          ))}
       </div>
       <div className="footer">
           <p className="digi">Let's get physical or keep it digital</p>

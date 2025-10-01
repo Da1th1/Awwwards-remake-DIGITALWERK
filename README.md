@@ -1,10 +1,76 @@
-# This Website was crafted by - @chaniru.lk - Instagram
-![Scrrenshot](./src/components/img/screenshot.png)
-# About the AUTHOR
+# Digitalwerk Portfolio Website
 
-Follow on instagram - @chaniru.lk 
-For more designs and inspiring website development /
-awwwards remakes :-)
+A modern, award-winning digital agency portfolio website with integrated CMS backend for managing cases and blog posts.
+
+![Screenshot](./src/components/img/screenshot.png)
+
+## ✨ Features
+
+- 🎨 Beautiful, modern UI inspired by Awwwards designs
+- 📝 **CMS Backend** - Easily manage cases and blog posts through Strapi
+- 🚀 Dynamic Content - Cases and blogs are fetched from the CMS in real-time
+- 💪 Fallback Support - Website works even if CMS is offline
+- 📱 Responsive Design - Optimized for all devices
+- ⚡ Fast Performance - Built with React
+
+## 🚀 Quick Start
+
+### For Development with CMS
+
+See the detailed [CMS Setup Guide](./CMS_SETUP_GUIDE.md) for complete instructions.
+
+**Quick setup:**
+```bash
+# Install all dependencies (frontend + backend)
+npm run setup:all
+
+# Start both frontend and backend
+npm run start:all
+```
+
+### Frontend Only (Static Content)
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+## 📚 Documentation
+
+- **[CMS Setup Guide](./CMS_SETUP_GUIDE.md)** - Complete guide for setting up and using the CMS
+- **[Backend README](./backend/README.md)** - Strapi backend documentation
+
+## 🎯 Available Scripts
+
+- `npm start` - Run frontend only
+- `npm run start:all` - Run both frontend and backend
+- `npm run start:backend` - Run backend only
+- `npm run start:frontend` - Run frontend only
+- `npm run build` - Build frontend for production
+- `npm run setup:all` - Install all dependencies
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React 18
+- Lottie Player
+- Create React App
+
+**Backend (CMS):**
+- Strapi 4.x
+- SQLite (development)
+- Node.js
+
+## 📝 Original Attribution
+
+This website design was originally crafted by [@chaniru.lk](https://instagram.com/chaniru.lk) on Instagram.
+
+Follow for more designs and inspiring website development / Awwwards remakes!
+
+---
 
 # Getting Started with Create React App
 
