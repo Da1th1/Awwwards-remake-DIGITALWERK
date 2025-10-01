@@ -27,11 +27,11 @@ const Home = () => {
         advertising.
         </div>
         <div className="view">
-        <button type="button" className="Button-view">View Manifesto</button>
+        <button type="button" className="Button-view" style={{color: '#682aff'}}>View Manifesto</button>
         </div>
-        <div className="date">{date}</div>
-        <div className="company">
-          <img src={B} alt="CK" className="ck" />
+        <div className="date" style={{color: '#682aff'}}>{date}</div>
+        <div className="company" style={{color: '#682aff'}}>
+          <img src={B} alt="Pure Digital" className="ck" />
         </div>
         <video loop muted autoPlay className="backdrop">
         <source
