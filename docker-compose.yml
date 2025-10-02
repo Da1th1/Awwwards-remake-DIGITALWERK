@@ -11,6 +11,8 @@ services:
       - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - digitalwerk_network
 
   strapi:
     platform: linux/amd64
@@ -37,9 +39,28 @@ services:
       DATABASE_PASSWORD: strapi
       DATABASE_SSL: "false"
     volumes:
-      - ./backend/public:/app/public
+      - "../files/strapi-public:/app/public"
+      - "../files/strapi-uploads:/app/uploads"
     ports:
       - "1337:1337"
+    networks:
+      - digitalwerk_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: digitalwerk_frontend
+    depends_on:
+      - strapi
+    ports:
+      - "3000:80"
+    networks:
+      - digitalwerk_network
 
 volumes:
   db_data:
+
+networks:
+  digitalwerk_network:
+    driver: bridge
