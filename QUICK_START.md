@@ -7,19 +7,7 @@
 npm run setup:all
 ```
 
-### 2. Configure Backend
-```bash
-cd backend
-cp env.example.txt .env
-```
-
-Generate keys and add to `.env`:
-```bash
-openssl rand -base64 32
-# Run this 5 times and add to .env file
-```
-
-### 3. Configure Frontend
+### 2. Configure Frontend
 Create `.env` in root directory:
 ```env
 REACT_APP_API_URL=http://localhost:1337/api
@@ -27,32 +15,13 @@ REACT_APP_API_URL=http://localhost:1337/api
 
 ## Running the Application
 
-### Start Everything (Recommended)
-```bash
-npm run start:all
-```
-
-### Or Start Separately
-
-**Terminal 1 - Backend:**
-```bash
-npm run start:backend
-```
-
-**Terminal 2 - Frontend:**
+### Start Frontend
 ```bash
 npm start
 ```
 
-## First-Time CMS Setup
-
-1. Open http://localhost:1337/admin
-2. Create admin account
-3. Go to Settings → Users & Permissions → Roles → Public
-4. Enable permissions:
-   - Case: `find`, `findOne`
-   - Blog: `find`, `findOne`
-5. Save
+## CMS Removed
+This project no longer includes a CMS backend.
 
 ## Adding Content
 
@@ -71,25 +40,17 @@ npm start
 ## URLs
 
 - **Frontend**: http://localhost:3000
-- **CMS Admin**: http://localhost:1337/admin
-- **API**: http://localhost:1337/api
 
 ## Troubleshooting
 
 **Frontend shows "Loading..." forever?**
-- Check backend is running on port 1337
-- Verify API permissions are set to public
-- Check `.env` has correct API URL
+- Remove any code that relies on a backend API.
 
 **Images not showing?**
-- Upload images in Strapi admin
-- Check featured image is populated
-- Verify image field in API response
+- Ensure images exist in `public/` or update paths.
 
 **Can't access CMS admin?**
-- Ensure backend is running
-- Clear browser cache
-- Check `.env` file has proper keys
+- CMS has been removed.
 
 ## Common Commands
 

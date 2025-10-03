@@ -1,6 +1,6 @@
 # 🎉 Welcome to Your CMS-Powered Portfolio!
 
-Your Digitalwerk portfolio website now has a complete CMS backend. Here's everything you need to get started.
+Your Digitalwerk portfolio website is now frontend-only. Here's everything you need to get started.
 
 ## 📖 Quick Navigation
 
@@ -8,9 +8,7 @@ Your Digitalwerk portfolio website now has a complete CMS backend. Here's everyt
 |----------|---------|
 | **[START_HERE.md](./START_HERE.md)** | ⭐ You are here - Start with this |
 | **[QUICK_START.md](./QUICK_START.md)** | Fast setup commands and troubleshooting |
-| **[CMS_SETUP_GUIDE.md](./CMS_SETUP_GUIDE.md)** | Complete step-by-step guide |
 | **[IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md)** | Technical details and architecture |
-| **[backend/README.md](./backend/README.md)** | Backend-specific documentation |
 
 ## 🚀 Get Started in 5 Minutes
 
@@ -19,45 +17,24 @@ Your Digitalwerk portfolio website now has a complete CMS backend. Here's everyt
 npm run setup:all
 ```
 
-### 2️⃣ Configure Backend
-```bash
-cd backend
-cp env.example.txt .env
-```
-
-Edit `.env` and add secure keys (generate with `openssl rand -base64 32`)
-
-### 3️⃣ Configure Frontend
+### 2️⃣ Configure Frontend
 Create `.env` in the root:
 ```env
 REACT_APP_API_URL=http://localhost:1337/api
 ```
 
-### 4️⃣ Start Both Servers
+### 3️⃣ Start Frontend
 ```bash
-npm run start:all
+npm start
 ```
-
-### 5️⃣ Set Up CMS
-1. Go to http://localhost:1337/admin
-2. Create your admin account
-3. Set permissions: Settings → Users & Permissions → Public
-   - Enable `find` and `findOne` for Case and Blog
-4. Start adding content!
 
 ## ✨ What's New?
 
-### 🎨 CMS Features
-- ✅ **Dynamic Cases** - Add/edit portfolio cases through admin panel
-- ✅ **Blog Management** - Create and publish blog posts
-- ✅ **Image Uploads** - Upload and manage images in one place
-- ✅ **Draft/Publish** - Preview before publishing
-- ✅ **Graceful Fallback** - Site works even if CMS is offline
+### 🎨 Features
+- ✅ Static frontend app
 
 ### 🛠️ Technical Additions
-- Strapi 4.x CMS backend
-- REST API for content
-- React integration with hooks
+- React app
 - Loading states and error handling
 - Comprehensive documentation
 
@@ -70,11 +47,7 @@ Your Project/
 ├── 📄 CMS_SETUP_GUIDE.md     ← Full setup guide
 ├── 📄 IMPLEMENTATION_SUMMARY.md
 ├── backend/                   ← Strapi CMS
-│   ├── config/
-│   ├── src/api/
-│   │   ├── case/             ← Case studies
-│   │   └── blog/             ← Blog posts
-│   └── package.json
+│   (backend removed)
 ├── src/                       ← React frontend
 │   ├── components/
 │   │   ├── Third/            ← Cases display (updated)
@@ -87,31 +60,11 @@ Your Project/
 
 ## 🎯 Common Tasks
 
-### Adding a Case Study
-1. Go to http://localhost:1337/admin
-2. Content Manager → Case Study → Create
-3. Fill in title, description, upload image
-4. Set order number for positioning
-5. Save & Publish
-
-### Adding a Blog Post
-1. Go to http://localhost:1337/admin
-2. Content Manager → Blog Post → Create
-3. Fill in title, excerpt, content
-4. Set publish date
-5. Upload featured image (optional)
-6. Save & Publish
+Content is now managed directly in the frontend or via static assets.
 
 ### Starting Development
 ```bash
-# Terminal 1
-npm run start:backend
-
-# Terminal 2
 npm start
-
-# Or use one command:
-npm run start:all
 ```
 
 ## 🔗 Important URLs
@@ -119,40 +72,21 @@ npm run start:all
 | Service | URL |
 |---------|-----|
 | Frontend | http://localhost:3000 |
-| CMS Admin | http://localhost:1337/admin |
-| API Docs | http://localhost:1337/api/cases |
+| API | (none - backend removed) |
 
 ## 💡 Pro Tips
 
-1. **Start Simple**: Add one case and one blog to test
-2. **Optimize Images**: Keep images under 2MB
-3. **Use Order Field**: Control case display order with numbers
-4. **Draft Mode**: Save as draft to preview before publishing
-5. **Backup Database**: Regularly backup `backend/.tmp/data.db`
+1. **Optimize Images**: Keep images under 2MB
 
 ## ❓ Need Help?
 
 ### Quick Troubleshooting
 
-**Problem: Frontend shows "Loading..." forever**
-- ✅ Check backend is running on port 1337
-- ✅ Verify API permissions are public
-- ✅ Check `.env` has correct API URL
-
-**Problem: Can't access admin panel**
-- ✅ Ensure backend is running
-- ✅ Clear browser cache
-- ✅ Check `.env` file has keys
-
-**Problem: Images not showing**
-- ✅ Upload images in Strapi
-- ✅ Check featured image is populated
-- ✅ Verify image in API response
+If you previously had a CMS, ensure code no longer expects it.
 
 ### Documentation
 
 - **Quick fixes**: [QUICK_START.md](./QUICK_START.md)
-- **Detailed setup**: [CMS_SETUP_GUIDE.md](./CMS_SETUP_GUIDE.md)
 - **Technical details**: [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md)
 
 ## 🎓 Learning Resources
@@ -177,13 +111,8 @@ See [CMS_SETUP_GUIDE.md](./CMS_SETUP_GUIDE.md#-deployment) for detailed deployme
 ## 📝 Next Steps
 
 1. ✅ Run `npm run setup:all`
-2. ✅ Configure environment files
-3. ✅ Start both servers
-4. ✅ Create admin account
-5. ✅ Set API permissions
-6. ✅ Add your first case study
-7. ✅ Add your first blog post
-8. ✅ Celebrate! 🎉
+2. ✅ Start frontend
+3. ✅ Celebrate! 🎉
 
 ---
 

@@ -15,14 +15,10 @@
   "scripts": {
     "start": "react-scripts start",
     "start:frontend": "react-scripts start",
-    "start:backend": "cd backend && npm run develop",
-    "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "build": "react-scripts build",
-    "build:backend": "cd backend && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "setup:backend": "cd backend && npm install",
-    "setup:all": "npm install && npm run setup:backend"
+    "setup:all": "npm install"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "devDependencies": {}
 }
