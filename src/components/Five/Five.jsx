@@ -71,7 +71,7 @@ const Five = () => {
           <p className="digi">Let's get physical or keep it digital</p>
           <h1 className="get-in">Get in touch</h1>
       </div>
-      <a href="https://instagram.com/chaniru.lk" className="credit" target="_blank" rel="noopener noreferrer">@chaniru.lk  &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;Instagram</a>
+      <a href="https://instagram.com/wearepuredigital" className="credit" target="_blank" rel="noopener noreferrer">@wearepuredigital  &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;Instagram</a>
   </div>;
 };
 
