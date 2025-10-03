@@ -188,12 +188,13 @@
 }
 
 .credit{
-    font-size: 10vw;
+    font-size: 6vw;
     font-weight: bold;
     color: black;
     position: absolute;
     text-decoration: none;
     left: 10px;
+    white-space: nowrap;
 }
 
 .credit:after{
